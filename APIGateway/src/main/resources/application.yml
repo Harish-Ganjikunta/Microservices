@@ -1,0 +1,12 @@
+server:
+  port: 7000
+  
+spring:  application:    name: APIGATEWAY  cloud:    gateway:      routes:      - id: Citizen-Service
+        uri:          lb://CITIZEN-SERVICE
+        predicates:        - Path=/citizen/**
+        
+      - id: Vaccination-Center
+        uri:
+          lb://VACCINATION-CENTER
+        predicates:
+        - Path=/vaccination-center/**

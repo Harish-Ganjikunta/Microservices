@@ -1,0 +1,25 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: citizenservice
+spec:
+  replicas: 4
+  #number of replicas generated
+  selector:
+    #assigns labels to the pods for future selection
+    matchLabels:
+      app: citizenservice
+      version: v01
+  template:
+    metadata:
+      labels:
+        app: citizenservice
+        version: v01
+    spec:
+      containers:
+      - name: citizenservice
+        image: citizenservice:1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
