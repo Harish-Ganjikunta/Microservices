@@ -2,7 +2,9 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
-      enabled: false
+      enabled: true
+  profiles:
+    active: dev
 
   application:
       name: Citizen-Service
