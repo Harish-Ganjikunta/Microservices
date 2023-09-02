@@ -3,6 +3,7 @@ package com.citizen.service.rest.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,13 +19,16 @@ import com.citizen.service.rest.services.CitizenService;
 @RestController
 @RequestMapping("/citizen")
 public class CitizenController {
+
+    @Autowired
+	private Environment env;
 	
 	@Autowired
 	private CitizenService  citizenService;
 	
 	@GetMapping("/sayHello")
 	public ResponseEntity<String> sayHello(){
-		return new ResponseEntity<>("Hello Eureka", HttpStatus.OK);
+		return new ResponseEntity<>("Hello "+env.getProperty("prop.ey.value")+" welcome to Eureka", HttpStatus.OK);
 	}
 	
 	/**

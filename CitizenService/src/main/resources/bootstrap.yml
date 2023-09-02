@@ -3,3 +3,15 @@ spring:
     config:
       uri: http://localhost:8888
       enabled: true
+  profiles:
+    active: dev
+
+  application:
+      name: Citizen-Service
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+server:
+    port: 8086

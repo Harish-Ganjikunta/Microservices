@@ -1,16 +1,9 @@
- server:
-  port: 8086
-  
 spring:
-  application:
-    name: Citizen-Service
-    
   #datasource:
    # url: jdbc:h2:mem:testdb
    # username: sa
    # password: 
    # driver-class-name: org.h2.Driver
-    
   datasource:
     url: jdbc:mysql://localhost:3306/microservices
     username: root
@@ -37,3 +30,5 @@ management:
    endpoint: 
      health.enabled: true
      loggers.enabled: true
+
+prop.ey.value: Varma
