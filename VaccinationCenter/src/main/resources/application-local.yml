@@ -1,10 +1,4 @@
-server:
-  port: 8087
-  
-spring:
-  application:
-    name: Vaccination-Center
-    
+ spring:
   #datasource:
    # url: jdbc:h2:mem:testdb
    # username: sa
@@ -31,9 +25,4 @@ spring:
         trace: false
         web-allow-others: false
         
-management:
-   endpoints: 
-    enabled-by-default: false 
-   endpoint: 
-     health.enabled: true
-     loggers.enabled: true
+

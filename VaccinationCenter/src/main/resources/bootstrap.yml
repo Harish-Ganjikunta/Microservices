@@ -1,0 +1,25 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+      enabled: true
+  profiles:
+    active: dev
+
+  application:
+    name: Vaccination-Center
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+server:
+  port: 8087
+
+
+management:
+  endpoints:
+    enabled-by-default: false
+  endpoint:
+    health.enabled: true
+    loggers.enabled: true
