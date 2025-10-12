@@ -1,3 +1,4 @@
+/*
 package com.citizen.service.rest.config;
 
 import org.springframework.beans.BeansException;
@@ -66,3 +67,4 @@ public class SpringFoxConfig {
         };
     }
 }
+*/

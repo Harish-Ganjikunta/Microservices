@@ -35,7 +35,7 @@ public class VaccinationService {
 	@SuppressWarnings("unchecked")
 	public VaccinationResponse findVaccinationCenterResponse(Integer vaccineId){
 		VaccinationResponse response  =  new VaccinationResponse();
-		VaccinationCenter vaccineCenter= vaccinationCenterRepository.findById(vaccineId).get();
+		VaccinationCenter vaccineCenter= vaccinationCenterRepository.findById(vaccineId).orElse(new VaccinationCenter());
 		response.setVaccinationCenter(vaccineCenter);
 		//List<Citizen> citizens = restTemplate.getForObject("http://localhost:8086/citizen/getallCitizens/"+vaccineId, List.class);
 		List<Citizen> citizens = restTemplate.getForObject("http://CITIZEN-SERVICE/citizen/getallCitizens/"+vaccineId, List.class);
